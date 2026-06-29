@@ -6,6 +6,10 @@ setInterval(updateTime, 1000);
 var welcomeScreen = document.querySelector("#welcome")
 var welcomeScreenClose = document.querySelector("#welcomeclose")
 var welcomeScreenOpen = document.querySelector("#welcomeopen")
+var aboutMeScreen = document.querySelector("#aboutme");
+var aboutMeScreenClose = document.querySelector("#aboutmeclose");
+var photosScreen = document.querySelector("#photos");
+var photosScreenClose = document.querySelector("#photosclose");
 
 // Make an element draggable
 function dragElement(elmnt) {
@@ -46,7 +50,10 @@ function dragElement(elmnt) {
 // Activate dragging for your welcome window
 window.onload = function() {
     dragElement(document.getElementById("welcome"));
+    dragElement(document.getElementById("aboutme"));
+    dragElement(document.getElementById("photos"));
 };
+
 
 function closeWindow(element) {
   element.style.display = "none"
@@ -61,4 +68,20 @@ welcomeScreenClose.addEventListener("click", function() {
 
 welcomeScreenOpen.addEventListener("click", function() {
   openWindow(welcomeScreen);
+});
+
+aboutMeScreenClose.addEventListener("click", function() {
+    closeWindow(aboutMeScreen);
+});
+
+aboutMeScreenOpen.addEventListener("click", function() {
+  openWindow(aboutMeScreen);
+});
+
+photosScreenClose.addEventListener("click", function() {
+    closeWindow(photosScreen);
+});
+
+photosScreenOpen.addEventListener("click", function() {
+  openWindow(photosScreen);
 });
