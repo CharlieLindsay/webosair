@@ -3,6 +3,8 @@ function updateTime() {
     document.querySelector("#timeElement").innerHTML = currentTime;
 }
 setInterval(updateTime, 1000);
+
+var biggestIndex = 1;
 var welcomeScreen = document.querySelector("#welcome")
 var welcomeScreenClose = document.querySelector("#welcomeclose")
 var welcomeScreenOpen = document.querySelector("#welcomeopen")
@@ -10,12 +12,16 @@ var aboutMeScreen = document.querySelector("#aboutme");
 var aboutMeScreenClose = document.querySelector("#aboutmeclose");
 var photosScreen = document.querySelector("#photos");
 var photosScreenClose = document.querySelector("#photosclose");
+var notes = document.querySelector("#notes");
+var notesClose = document.querySelector("#notesclose");
+var aboutMeScreenOpen = document.querySelector("#aboutMeScreenOpen");
+var photosScreenOpen = document.querySelector("#photosScreenOpen");
+var notesOpen = document.querySelector("#notesOpen");
+var topBar = document.querySelector("#top");
 
-// Make an element draggable
 function dragElement(elmnt) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
-    // If element has a header, drag from header
     const header = document.getElementById(elmnt.id + "header");
     if (header) {
         header.onmousedown = dragMouseDown;
@@ -47,20 +53,38 @@ function dragElement(elmnt) {
     }
 }
 
-// Activate dragging for your welcome window
 window.onload = function() {
     dragElement(document.getElementById("welcome"));
     dragElement(document.getElementById("aboutme"));
     dragElement(document.getElementById("photos"));
+    dragElement(document.getElementById("notes"));
 };
 
-
 function closeWindow(element) {
-  element.style.display = "none"
+  element.style.display = "none";
 }
+
 function openWindow(element) {
-  element.style.display = "block"
+  element.style.display = "block";
+  biggestIndex++;
+  element.style.zIndex = biggestIndex;
+  topBar.style.zIndex = biggestIndex + 1;
 }
+
+function handleWindowTap(element) {
+  biggestIndex++;
+  element.style.zIndex = biggestIndex;
+  topBar.style.zIndex = biggestIndex + 1;
+}
+
+function addWindowTapHandling(element) {
+  element.addEventListener("mousedown", () => handleWindowTap(element));
+}
+
+addWindowTapHandling(welcomeScreen);
+addWindowTapHandling(aboutMeScreen);
+addWindowTapHandling(photosScreen);
+addWindowTapHandling(notes);
 
 welcomeScreenClose.addEventListener("click", function() {
   closeWindow(welcomeScreen);
@@ -84,4 +108,19 @@ photosScreenClose.addEventListener("click", function() {
 
 photosScreenOpen.addEventListener("click", function() {
   openWindow(photosScreen);
+});
+
+notesClose.addEventListener("click", function() {
+    closeWindow(notes);
+});
+
+notesOpen.addEventListener("click", function() {
+  openWindow(notes);
+});
+
+document.getElementById("notepad").value =
+    localStorage.getItem("notepad_text") || "";
+
+document.getElementById("notepad").addEventListener("input", function () {
+    localStorage.setItem("notepad_text", this.value);
 });

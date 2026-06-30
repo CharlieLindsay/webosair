@@ -19,7 +19,7 @@
     style="background-image:url(images/steve001-airbus-4454338.jpg);background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:fixed;">
     <!--Top Bar Below!!-->
     <div
-        style="display:flex;justify-content:space-between;backdrop-filter: blur(5px); background-color: rgba(0, 94, 255, 0.25); color: #fff; justify-content: space-between;">
+        style="display:flex;justify-content:space-between;backdrop-filter: blur(5px); background-color: rgba(0, 94, 255, 0.25); color: #fff; justify-content: space-between;" id="top">
         <p style="margin:5px 20px 5px 20px;background-color:rgb(81, 154, 232);border-radius:20px;padding:4px;">WebOS Air
         </p>
         <img src="images/webosair_logo.png" width="30px" height="30px">
@@ -55,7 +55,19 @@
         <h1 style="margin-bottom:0;">Flight Facts!</h1>
         <h2 style="margin:0;color:black;font-size:15px;">Interesting information and history in aviation!</h2>
         <h2 style="margin-bottom:0;">Largest Plane</h2>
-        <p style="margin:0;color:black;font-size:15px;">Currently, the largest plane in the world is </p>
+        <p style="margin:0;color:black;font-size:15px;">Currently, the heaviest and longest plane in the world is the
+            Antonov An-225 Mriya. However, only one was ever flown.
+            There is a plane in development (the Radia WindRunner) which will surpass this size, being 24m longer!
+        </p>
+        <h2 style="margin-bottom:0;">Largest Helicopter</h2>
+        <p style="margin:0;color:black;font-size:15px;">The largest helicopter in the world currently is Mil Mi-26 and
+            was built by the Soviet/Russian Mil Design
+            Bureau.
+            It's maximum takeoff weight is 56,000 kg!
+        </p>
+        <h2 style="margin-bottom:0;">Extra facts!</h2>
+        <p style="margin:0;color:black;font-size:15px;">There is an estimated 400,000 to 600,000 aircraft worldwide!
+            Also, there is around 40,000 to 44,000 airports worldwide!</p>
     </div>
 
     <div style="background-color:#00f7ff;color:white;border:solid;padding:10px;position:absolute;border-radius:10px;width:20%;top:50%;left:85%;transform:translate(-50%, -50%);display:none;height:45%;overflow-y:auto;"
@@ -75,6 +87,22 @@
         <img src="images/leonhard_niederwimmer-plane-8508636_1920.jpg" width="200">
     </div>
 
+    <div style="background-color:#00f7ff;color:white;border:solid;padding:10px;position:absolute;border-radius:10px;width:20%;top:50%;left:55%;transform:translate(-50%, -50%);display:none;height:45%;"
+        id="notes">
+        <div style="width:100%;background-color:rgb(78, 63, 243);opacity:70%;margin:0;border-radius:20px;cursor:pointer;height:20px;"
+            id="notesheader">
+            <p style="cursor: pointer;">
+            <div id="notesclose" style="background-color:red;border-radius:20px;width:20px;height:20px;margin-top:0;">
+            </div>
+            </p>
+        </div>
+        <h1>Notes</h1>
+        <div style="max-width:500px;margin:auto;">
+            <textarea id="notepad" style="width:100%;height:200px;font-size:16px;background-color:beige;"></textarea>
+        </div>
+
+    </div>
+
 
     <!--Bottom Bar-->
     <div
@@ -85,6 +113,8 @@
             id="aboutMeScreenOpen">Flight Facts</p>
         <p style="margin:5px 20px 5px 20px;background-color:rgb(81, 154, 232);border-radius:20px;padding:4px;cursor:pointer;"
             id="photosScreenOpen">Avitation Photos</p>
+        <p style="margin:5px 20px 5px 20px;background-color:rgb(81, 154, 232);border-radius:20px;padding:4px;cursor:pointer;"
+            id="notesOpen">Notes</p>
     </div>
     <script src="script.js"></script>
 </body>
