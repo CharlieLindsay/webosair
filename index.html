@@ -18,8 +18,8 @@
 <body
     style="background-image:url(images/steve001-airbus-4454338.jpg);background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:fixed;">
     <!--Top Bar Below!!-->
-    <div
-        style="display:flex;justify-content:space-between;backdrop-filter: blur(5px); background-color: rgba(0, 94, 255, 0.25); color: #fff; justify-content: space-between;" id="top">
+    <div style="display:flex;justify-content:space-between;backdrop-filter: blur(5px); background-color: rgba(0, 94, 255, 0.25); color: #fff; justify-content: space-between;"
+        id="top">
         <p style="margin:5px 20px 5px 20px;background-color:rgb(81, 154, 232);border-radius:20px;padding:4px;">WebOS Air
         </p>
         <img src="images/webosair_logo.png" width="30px" height="30px">
@@ -87,6 +87,8 @@
         <img src="images/leonhard_niederwimmer-plane-8508636_1920.jpg" width="200">
     </div>
 
+
+
     <div style="background-color:#00f7ff;color:white;border:solid;padding:10px;position:absolute;border-radius:10px;width:20%;top:50%;left:55%;transform:translate(-50%, -50%);display:none;height:45%;"
         id="notes">
         <div style="width:100%;background-color:rgb(78, 63, 243);opacity:70%;margin:0;border-radius:20px;cursor:pointer;height:20px;"
@@ -100,7 +102,20 @@
         <div style="max-width:500px;margin:auto;">
             <textarea id="notepad" style="width:100%;height:200px;font-size:16px;background-color:beige;"></textarea>
         </div>
+    </div>
 
+
+
+    <div style="background-color:#00f7ff;color:white;border:solid;padding:10px;position:absolute;border-radius:10px;width:20%;top:60%;left:35%;transform:translate(-50%, -50%);display:none;height:45%;"
+        id="weather">
+        <div style="width:100%;background-color:rgb(78, 63, 243);opacity:70%;margin:0;border-radius:20px;cursor:pointer;height:20px;"
+            id="weatherheader">
+            <p style="cursor: pointer;">
+            <div id="weatherClose" style="background-color:red;border-radius:20px;width:20px;height:20px;margin-top:0;">
+            </div>
+            </p>
+        </div>
+        <h1>Weather</h1>
     </div>
 
 
@@ -115,6 +130,8 @@
             id="photosScreenOpen">Avitation Photos</p>
         <p style="margin:5px 20px 5px 20px;background-color:rgb(81, 154, 232);border-radius:20px;padding:4px;cursor:pointer;"
             id="notesOpen">Notes</p>
+        <p style="margin:5px 20px 5px 20px;background-color:rgb(81, 154, 232);border-radius:20px;padding:4px;cursor:pointer;"
+            id="weatherOpen">Weather</p>
     </div>
     <script src="script.js"></script>
 </body>

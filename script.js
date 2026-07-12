@@ -12,6 +12,9 @@ var aboutMeScreen = document.querySelector("#aboutme");
 var aboutMeScreenClose = document.querySelector("#aboutmeclose");
 var photosScreen = document.querySelector("#photos");
 var photosScreenClose = document.querySelector("#photosclose");
+var weather = document.querySelector("#weather");
+var weatherClose = document.querySelector("#weatherClose");
+var weatherOpen = document.querySelector("#weatherOpen");
 var notes = document.querySelector("#notes");
 var notesClose = document.querySelector("#notesclose");
 var aboutMeScreenOpen = document.querySelector("#aboutMeScreenOpen");
@@ -58,6 +61,7 @@ window.onload = function() {
     dragElement(document.getElementById("aboutme"));
     dragElement(document.getElementById("photos"));
     dragElement(document.getElementById("notes"));
+    dragElement(document.getElementById("weather"));
 };
 
 function closeWindow(element) {
@@ -85,6 +89,7 @@ addWindowTapHandling(welcomeScreen);
 addWindowTapHandling(aboutMeScreen);
 addWindowTapHandling(photosScreen);
 addWindowTapHandling(notes);
+addWindowTapHandling(weather);
 
 welcomeScreenClose.addEventListener("click", function() {
   closeWindow(welcomeScreen);
@@ -117,6 +122,16 @@ notesClose.addEventListener("click", function() {
 notesOpen.addEventListener("click", function() {
   openWindow(notes);
 });
+
+weatherClose.addEventListener("click", function() {
+    closeWindow(weather);
+});
+
+weatherOpen.addEventListener("click", function() {
+  openWindow(weather);
+});
+
+
 
 document.getElementById("notepad").value =
     localStorage.getItem("notepad_text") || "";

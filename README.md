@@ -6,6 +6,7 @@ A peaceful, web based operating system for those who like aviation :)
 - Cool background
 - Aviation Photos
 - Notepad that saves to localstorage
+- Weather
 - Aviation Facts
 - Moveable and closeable windows that change the one on top to most recently accessed
 
