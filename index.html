@@ -13,6 +13,7 @@
     </style>
     <title>WebOS Air</title>
     <link rel="icon" type="image/x-icon" href="images/webosair_logo.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body
@@ -106,7 +107,7 @@
 
 
 
-    <div style="background-color:#00f7ff;color:white;border:solid;padding:10px;position:absolute;border-radius:10px;width:20%;top:60%;left:35%;transform:translate(-50%, -50%);display:none;height:45%;"
+    <div style="background-color:#00f7ff;color:white;border:solid;padding:10px;position:absolute;border-radius:10px;width:20%;top:60%;left:35%;transform:translate(-50%, -50%);display:none;height:30%;"
         id="weather">
         <div style="width:100%;background-color:rgb(78, 63, 243);opacity:70%;margin:0;border-radius:20px;cursor:pointer;height:20px;"
             id="weatherheader">
@@ -115,7 +116,46 @@
             </div>
             </p>
         </div>
-        <h1>Weather</h1>
+        <h1 style="margin-bottom:0;">Weather</h1>
+        <div id="weather-box" style="font-family:Arial; color:white; padding:10px;flex-shrink:0;">
+            Weather incoming...
+        </div>
+        <script>
+            async function loadWeather() {
+                const box = document.getElementById("weather-box");
+
+                navigator.geolocation.getCurrentPosition(async (pos) => {
+                    try {
+                        const lat = pos.coords.latitude;
+                        const lon = pos.coords.longitude;
+                        const iframe = document.getElementById("map");
+
+
+                        const weather = await fetch(
+                            `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`
+                        ).then(r => r.json());
+
+                        const temp = weather.current_weather.temperature;
+                        const wind = weather.current_weather.windspeed;
+                        const code = weather.current_weather.weathercode;
+
+                        box.innerHTML = `
+
+                <h2><strong>${temp}C</strong></h2>
+                <p>Wind: ${wind} km/h</p>
+                <p>Condition code: ${code}</p>
+            `;
+                    } catch (e) {
+                        box.innerHTML = "Weather unavailable.";
+                    }
+                }, () => {
+                    box.innerHTML = "Location permission denied.";
+                });
+            }
+
+            loadWeather();
+        </script>
+
     </div>
 
 
