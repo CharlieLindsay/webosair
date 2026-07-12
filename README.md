@@ -15,7 +15,7 @@ A peaceful, web based operating system for those who like aviation :)
 Access the demonstration website at: https://webosair.charleilei.dpdns.org/
 
 
-## Sources
+## Attribution
 ### Guides and Assistance
 https://jams.hackclub.com/batch/webOS I followed this amazing guide for a lot of the way - but changed styling and overall looks, format, and setup.
 ### Images
@@ -26,6 +26,8 @@ https://pixabay.com/photos/aircraft-wings-engine-flying-475409/
 https://pixabay.com/photos/aircraft-plane-aviation-vintage-8119477/
 https://pixabay.com/photos/airplane-wait-apron-aviation-7359232/
 https://pixabay.com/photos/aircraft-airplane-flying-airport-4885805/
+### API
+- https://api.open-meteo.com
 
 
 This was made by Charlie Lindsay during Stardance by Hackclub

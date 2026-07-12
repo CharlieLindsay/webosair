@@ -5,21 +5,31 @@ function updateTime() {
 setInterval(updateTime, 1000);
 
 var biggestIndex = 1;
+
 var welcomeScreen = document.querySelector("#welcome")
 var welcomeScreenClose = document.querySelector("#welcomeclose")
 var welcomeScreenOpen = document.querySelector("#welcomeopen")
+
 var aboutMeScreen = document.querySelector("#aboutme");
 var aboutMeScreenClose = document.querySelector("#aboutmeclose");
+var aboutMeScreenOpen = document.querySelector("#aboutMeScreenOpen");
+
 var photosScreen = document.querySelector("#photos");
 var photosScreenClose = document.querySelector("#photosclose");
+var photosScreenOpen = document.querySelector("#photosScreenOpen");
+
 var weather = document.querySelector("#weather");
 var weatherClose = document.querySelector("#weatherClose");
 var weatherOpen = document.querySelector("#weatherOpen");
+
 var notes = document.querySelector("#notes");
 var notesClose = document.querySelector("#notesclose");
-var aboutMeScreenOpen = document.querySelector("#aboutMeScreenOpen");
-var photosScreenOpen = document.querySelector("#photosScreenOpen");
 var notesOpen = document.querySelector("#notesOpen");
+
+var settings = document.querySelector("#settings");
+var settingsClose = document.querySelector("#settingsClose");
+var settingsOpen = document.querySelector("#settingsOpen");
+
 var topBar = document.querySelector("#top");
 
 function dragElement(elmnt) {
@@ -62,6 +72,7 @@ window.onload = function() {
     dragElement(document.getElementById("photos"));
     dragElement(document.getElementById("notes"));
     dragElement(document.getElementById("weather"));
+    dragElement(document.getElementById("settings"));
 };
 
 function closeWindow(element) {
@@ -90,6 +101,7 @@ addWindowTapHandling(aboutMeScreen);
 addWindowTapHandling(photosScreen);
 addWindowTapHandling(notes);
 addWindowTapHandling(weather);
+addWindowTapHandling(settings);
 
 welcomeScreenClose.addEventListener("click", function() {
   closeWindow(welcomeScreen);
@@ -129,6 +141,14 @@ weatherClose.addEventListener("click", function() {
 
 weatherOpen.addEventListener("click", function() {
   openWindow(weather);
+});
+
+settingsClose.addEventListener("click", function() {
+    closeWindow(settings);
+});
+
+settingsOpen.addEventListener("click", function() {
+  openWindow(settings);
 });
 
 
