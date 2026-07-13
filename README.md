@@ -8,6 +8,8 @@ A peaceful, web based operating system for those who like aviation :)
 - Notepad that saves to localstorage
 - Weather
 - Aviation Facts
+- Iframe to flight tracking map
+- Flight tracker uses lazy loading
 - Moveable and closeable windows that change the one on top to most recently accessed
 - Settings page with 12/24 hour time
 
@@ -29,6 +31,7 @@ https://pixabay.com/photos/airplane-wait-apron-aviation-7359232/
 https://pixabay.com/photos/aircraft-airplane-flying-airport-4885805/
 ### API
 - https://api.open-meteo.com
+- https://www.airnavradar.com (a widget to the site rather than actual API, but still mentioned here)
 
 
 This was made by Charlie Lindsay during Stardance by Hackclub
