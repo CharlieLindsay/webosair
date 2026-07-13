@@ -1,14 +1,8 @@
-function updateTime() {
-    const currentTime = new Date().toLocaleString();
-    document.querySelector("#timeElement").innerHTML = currentTime;
-}
-setInterval(updateTime, 1000);
-
 var biggestIndex = 1;
 
-var welcomeScreen = document.querySelector("#welcome")
-var welcomeScreenClose = document.querySelector("#welcomeclose")
-var welcomeScreenOpen = document.querySelector("#welcomeopen")
+var welcomeScreen = document.querySelector("#welcome");
+var welcomeScreenClose = document.querySelector("#welcomeclose");
+var welcomeScreenOpen = document.querySelector("#welcomeopen");
 
 var aboutMeScreen = document.querySelector("#aboutme");
 var aboutMeScreenClose = document.querySelector("#aboutmeclose");
@@ -31,6 +25,8 @@ var settingsClose = document.querySelector("#settingsClose");
 var settingsOpen = document.querySelector("#settingsOpen");
 
 var topBar = document.querySelector("#top");
+
+var hour = 0;
 
 function dragElement(elmnt) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -158,4 +154,35 @@ document.getElementById("notepad").value =
 
 document.getElementById("notepad").addEventListener("input", function () {
     localStorage.setItem("notepad_text", this.value);
+});
+
+
+
+// Time
+function updateTime() {
+  if (hour == 0){
+      const currentTime = new Date().toLocaleString(undefined, { hour12: false });
+      
+      document.querySelector("#timeElement").innerHTML = currentTime;
+  }
+  else{
+      const currentTime = new Date().toLocaleString(undefined, { hour12: true });
+      document.querySelector("#timeElement").innerHTML = currentTime;
+  }
+}
+setInterval(updateTime, 1000);
+
+
+
+// Settings
+const checkbox = document.getElementById("hour");
+
+checkbox.addEventListener("change", function() {
+  if (this.checked) {
+    hour = 1;
+
+  } else {
+    hour = 0;
+
+  }
 });
