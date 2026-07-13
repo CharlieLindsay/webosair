@@ -20,6 +20,10 @@ var notes = document.querySelector("#notes");
 var notesClose = document.querySelector("#notesclose");
 var notesOpen = document.querySelector("#notesOpen");
 
+var flights = document.querySelector("#flights");
+var flightsClose = document.querySelector("#flightsClose");
+var flightsOpen = document.querySelector("#flightsOpen");
+
 var settings = document.querySelector("#settings");
 var settingsClose = document.querySelector("#settingsClose");
 var settingsOpen = document.querySelector("#settingsOpen");
@@ -68,6 +72,7 @@ window.onload = function () {
   dragElement(document.getElementById("photos"));
   dragElement(document.getElementById("notes"));
   dragElement(document.getElementById("weather"));
+  dragElement(document.getElementById("flights"));
   dragElement(document.getElementById("settings"));
 };
 
@@ -97,6 +102,7 @@ addWindowTapHandling(aboutMeScreen);
 addWindowTapHandling(photosScreen);
 addWindowTapHandling(notes);
 addWindowTapHandling(weather);
+addWindowTapHandling(flights);
 addWindowTapHandling(settings);
 
 welcomeScreenClose.addEventListener("click", function () {
@@ -145,6 +151,14 @@ settingsClose.addEventListener("click", function () {
 
 settingsOpen.addEventListener("click", function () {
   openWindow(settings);
+});
+
+flightsClose.addEventListener("click", function () {
+  closeWindow(flights);
+});
+
+flightsOpen.addEventListener("click", function () {
+  openWindow(flights);
 });
 
 

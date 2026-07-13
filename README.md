@@ -9,6 +9,7 @@ A peaceful, web based operating system for those who like aviation :)
 - Weather
 - Aviation Facts
 - Moveable and closeable windows that change the one on top to most recently accessed
+- Settings page with 12/24 hour time
 
 
 ## How to try
